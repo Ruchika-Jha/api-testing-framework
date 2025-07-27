@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="API Test Suite" parallel="methods" thread-count="3">
+    <test name="Smoke Tests">
+        <classes>
+            <class name="com.testlead.automation.tests.smoke.SmokeTests"/>
+        </classes>
+    </test>
+    
+    <test name="User API Tests">
+        <classes>
+            <class name="com.testlead.automation.tests.users.UserAPITests"/>
+        </classes>
+    </test>
+</suite>
