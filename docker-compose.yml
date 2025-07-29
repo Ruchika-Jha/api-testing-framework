@@ -1,0 +1,28 @@
+services:
+  api-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: api-testing-framework
+    environment:
+      - ENV=qa
+      - BASE_URL=https://api-qa.example.com
+      - LOG_LEVEL=INFO
+      - PARALLEL_THREADS=3
+    volumes:
+      - ./reports:/app/reports
+      - ./logs:/app/logs
+      - ./testdata:/app/testdata
+    restart: "no"
+
+  report-viewer:
+    image: nginx:alpine
+    container_name: test-reports-viewer
+    ports:
+      - "8080:80"
+    volumes:
+      - ./reports:/usr/share/nginx/html
+    depends_on:
+      - api-tests
+    profiles:
+      - reports
