@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="API Automation Regression Suite" parallel="tests" thread-count="3">
+    
+    <parameter name="environment" value="qa"/>
+    
+    <listeners>
+        <listener class-name="com.testlead.automation.listeners.TestListener"/>
+    </listeners>
+    
+    <!-- Smoke Tests -->
+    <test name="Smoke Tests" priority="1">
+        <parameter name="testType" value="smoke"/>
+        <classes>
+            <class name="com.testlead.automation.tests.smoke.SmokeTest"/>
+        </classes>
+    </test>
+    
+    <!-- Authentication Tests -->
+    <test name="Authentication Tests" priority="2">
+        <parameter name="testType" value="authentication"/>
+        <classes>
+            <class name="com.testlead.automation.tests.authentication.AuthenticationTest"/>
+        </classes>
+    </test>
+    
+    <!-- User CRUD Tests -->
+    <test name="User CRUD Tests" priority="3">
+        <parameter name="testType" value="user_crud"/>
+        <classes>
+            <class name="com.testlead.automation.tests.users.UserCrudTest"/>
+        </classes>
+    </test>
+    
+    <!-- Product CRUD Tests -->
+    <test name="Product CRUD Tests" priority="4">
+        <parameter name="testType" value="product_crud"/>
+        <classes>
+            <class name="com.testlead.automation.tests.products.ProductCrudTest"/>
+        </classes>
+    </test>
+    
+    <!-- Integration Tests -->
+    <test name="Integration Tests" priority="5">
+        <parameter name="testType" value="integration"/>
+        <classes>
+            <class name="com.testlead.automation.tests.integration.IntegrationTest"/>
+        </classes>
+    </test>
+    
+</suite>

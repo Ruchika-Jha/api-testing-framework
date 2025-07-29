@@ -1,14 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="API Test Suite" parallel="methods" thread-count="3">
-    <test name="Smoke Tests">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="API Testing Suite" verbose="1" parallel="methods" thread-count="3">
+    
+    <!-- Suite level listeners -->
+    <listeners>
+        <listener class-name="com.testlead.automation.listeners.TestListener"/>
+    </listeners>
+    
+    <!-- Global suite parameters -->
+    <parameter name="environment" value="qa"/>
+    <parameter name="browser" value="chrome"/>
+    
+    <!-- Smoke Test Suite -->
+    <test name="Smoke Tests" preserve-order="true">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        
         <classes>
-            <class name="com.testlead.automation.tests.smoke.SmokeTests"/>
+            <class name="com.testlead.automation.tests.smoke.SmokeTest"/>
+            <class name="com.testlead.automation.tests.authentication.LoginTest"/>
         </classes>
     </test>
     
-    <test name="User API Tests">
+    <!-- Authentication Tests -->
+    <test name="Authentication Tests" preserve-order="false">
+        <groups>
+            <run>
+                <include name="authentication"/>
+                <include name="regression"/>
+            </run>
+        </groups>
+        
         <classes>
-            <class name="com.testlead.automation.tests.users.UserAPITests"/>
+            <class name="com.testlead.automation.tests.authentication.LoginTest"/>
+            <class name="com.testlead.automation.tests.authentication.LogoutTest"/>
         </classes>
     </test>
+    
+    <!-- User Management Tests -->
+    <test name="User Management Tests" preserve-order="false">
+        <groups>
+            <run>
+                <include name="users"/>
+                <include name="regression"/>
+            </run>
+        </groups>
+        
+        <classes>
+            <class name="com.testlead.automation.tests.users.CreateUserTest"/>
+            <class name="com.testlead.automation.tests.users.UpdateUserTest"/>
+            <class name="com.testlead.automation.tests.users.DeleteUserTest"/>
+        </classes>
+    </test>
+    
+    <!-- Product Management Tests -->
+    <test name="Product Management Tests" preserve-order="false">
+        <groups>
+            <run>
+                <include name="products"/>
+                <include name="regression"/>
+            </run>
+        </groups>
+        
+        <classes>
+            <class name="com.testlead.automation.tests.products.ProductCrudTest"/>
+            <class name="com.testlead.automation.tests.products.ProductSearchTest"/>
+        </classes>
+    </test>
+    
+    <!-- Integration Tests -->
+    <test name="Integration Tests" preserve-order="true">
+        <groups>
+            <run>
+                <include name="integration"/>
+            </run>
+        </groups>
+        
+        <classes>
+            <class name="com.testlead.automation.tests.integration.EndToEndTest"/>
+        </classes>
+    </test>
+    
 </suite>

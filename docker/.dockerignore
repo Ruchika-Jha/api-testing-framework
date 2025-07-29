@@ -1,0 +1,40 @@
+# 🚫 Don't copy these to Docker (makes image smaller and faster)
+
+# Maven build artifacts
+target/
+*.jar
+*.war
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git files
+.git/
+.gitignore
+
+# Logs and reports (we'll generate fresh ones)
+logs/
+reports/
+allure-results/
+
+# Docker files themselves
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Documentation
+README.md
+*.md
+
+# Temporary files
+*.tmp
+*.temp
+.cache/

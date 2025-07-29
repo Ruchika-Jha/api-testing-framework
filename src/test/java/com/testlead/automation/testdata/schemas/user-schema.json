@@ -1,0 +1,153 @@
+{
+  "createUser": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "password": "SecurePassword123!",
+    "phoneNumber": "+1234567890",
+    "address": {
+      "street": "123 Main St",
+      "city": "Anytown",
+      "state": "CA",
+      "zipCode": "12345",
+      "country": "USA"
+    },
+    "dateOfBirth": "1990-01-01",
+    "gender": "MALE",
+    "preferences": {
+      "newsletter": true,
+      "smsNotifications": false,
+      "language": "en"
+    }
+  },
+  "updateUser": {
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "phoneNumber": "+1987654321",
+    "address": {
+      "street": "456 Oak Ave",
+      "city": "Another City",
+      "state": "NY",
+      "zipCode": "67890",
+      "country": "USA"
+    },
+    "preferences": {
+      "newsletter": false,
+      "smsNotifications": true,
+      "language": "es"
+    }
+  },
+  "partialUpdateUser": {
+    "firstName": "Updated Name",
+    "preferences": {
+      "newsletter": true
+    }
+  },
+  "userSearch": {
+    "query": "john",
+    "filters": {
+      "isActive": true,
+      "role": "USER",
+      "registrationDateFrom": "2023-01-01",
+      "registrationDateTo": "2024-12-31"
+    }
+  },
+  "userPagination": {
+    "page": 1,
+    "size": 10,
+    "sortBy": "createdAt",
+    "sortDirection": "DESC"
+  },
+  "bulkUserCreation": [
+    {
+      "firstName": "User1",
+      "lastName": "Test",
+      "email": "user1@test.com",
+      "password": "Password123!",
+      "phoneNumber": "+1111111111"
+    },
+    {
+      "firstName": "User2",
+      "lastName": "Test",
+      "email": "user2@test.com",
+      "password": "Password123!",
+      "phoneNumber": "+2222222222"
+    },
+    {
+      "firstName": "User3",
+      "lastName": "Test",
+      "email": "user3@test.com",
+      "password": "Password123!",
+      "phoneNumber": "+3333333333"
+    }
+  ],
+  "userFilters": {
+    "role": "USER",
+    "isActive": true,
+    "city": "New York",
+    "ageRange": {
+      "min": 18,
+      "max": 65
+    },
+    "registrationDate": {
+      "from": "2023-01-01",
+      "to": "2024-12-31"
+    }
+  },
+  "invalidUser": {
+    "firstName": "",
+    "lastName": "",
+    "email": "invalid-email",
+    "password": "123",
+    "phoneNumber": "invalid-phone"
+  },
+  "userWithSpecialChars": {
+    "firstName": "José María",
+    "lastName": "González-López",
+    "email": "jose.maria@example.com",
+    "password": "SecurePassword123!",
+    "phoneNumber": "+34612345678",
+    "address": {
+      "street": "Calle de la Paz, 123",
+      "city": "Madrid",
+      "state": "Madrid",
+      "zipCode": "28001",
+      "country": "España"
+    }
+  },
+  "userProfileUpdate": {
+    "bio": "Software developer with 5+ years of experience",
+    "website": "https://johndoe.dev",
+    "socialMedia": {
+      "twitter": "@johndoe",
+      "linkedin": "johndoe",
+      "github": "johndoe"
+    },
+    "skills": ["JavaScript", "Python", "Java", "React", "Node.js"],
+    "experience": [
+      {
+        "company": "Tech Corp",
+        "position": "Senior Developer",
+        "startDate": "2020-01-01",
+        "endDate": "2023-12-31",
+        "description": "Led development of web applications"
+      }
+    ]
+  },
+  "userPreferences": {
+    "theme": "dark",
+    "timezone": "America/New_York",
+    "dateFormat": "MM/DD/YYYY",
+    "currency": "USD",
+    "notifications": {
+      "email": true,
+      "push": false,
+      "sms": false
+    },
+    "privacy": {
+      "profileVisible": true,
+      "showEmail": false,
+      "showPhone": false
+    }
+  }
+}
